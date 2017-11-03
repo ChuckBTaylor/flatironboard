@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 import StudentList from './StudentList'
 import StudentForm from './StudentForm'
+import { Route } from 'react-router-dom'
+import { fetchStudents } from '../../services/students'
 
 
 class StudentContainer extends Component {
 
 
   state = {
-    students: ["johann", "daniel", "terrance"]
+    students: [{name: "johann"}]
+  }
+
+  componentDidMount() {
+
+
   }
 
 
@@ -28,13 +35,15 @@ class StudentContainer extends Component {
   }
 
   render() {
+
     return (
       <div>
         <StudentForm onAdd={this.addStudent}/>
-        <StudentList onRemove={this.removeStudent} students={this.state.students}/>
+        <StudentList students={this.state.students}/>
       </div>
     )
   }
+
 }
 
 export default StudentContainer

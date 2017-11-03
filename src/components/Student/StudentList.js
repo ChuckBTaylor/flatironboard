@@ -4,16 +4,10 @@ import StudentCard from './StudentCard'
 class StudentList extends Component {
 
 
-
-
-  // handleRemoveStudent = (name) => {
-  //   console.log(this, name)
-  //   this.props.onRemove(name)
-  // }
-
   render() {
+    console.log("Student List rendering")
     // this.props.students
-    const studentItems = this.props.students.map((student) => <StudentCard student={student} handleRemove={this.props.onRemove}/>)
+    const studentItems = this.props.students.map((student, index) => <StudentCard key={index} student={student} handleRemove={this.props.onRemove}/>)
     return (
       <div>
         <ul>

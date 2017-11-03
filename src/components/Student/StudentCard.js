@@ -11,8 +11,12 @@ class StudentCard extends Component {
   }
   render() {
     return (
-      <li onClick={this.handleClick}>{this.props.student}</li>
+      <li>{this.props.student.name}</li>
     )
+  }
+
+  componentWillUnmount() {
+    console.log("Unmounting")
   }
 }
 
